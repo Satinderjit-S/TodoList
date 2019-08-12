@@ -2,20 +2,31 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title> To Do List</title>
+    <<link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <h1><%= date %></h1>
-  <ul>
-  <%  for(var i=0; i<htodo.length;i++){ %>
-    <li><%= htodo[i] %></li>
-    <% } %>
-  </ul>
+<div class="box" id="heading">
+  <h1><%= date %></h1>
 
-  <form class="" action="/" method="post">
-    <input type="text" name="newitem">
-    <button type="submit" name="button">Add</button>
+</div>
+
+<div class="box">
+<%  for(var i=0; i<htodo.length;i++){ %>
+  <div class="item">
+    <input type="checkbox">
+    <p><%= htodo[i] %></p>
+  </div>
+  <% } %>
+
+  <form class="item" action="/" method="post">
+    <input type="text" name="newitem" placeholder="New Item" autocomplete="off">
+    <button type="submit" name="button">+</button>
   </form>
+</div>
+
+
+
 
   </body>
 </html>
