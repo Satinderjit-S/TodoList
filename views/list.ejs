@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1><%= date %></h1>
+  <ul>
+  <%  for(var i=0; i<htodo.length;i++){ %>
+    <li><%= htodo[i] %></li>
+    <% } %>
+  </ul>
+
+  <form class="" action="/" method="post">
+    <input type="text" name="newitem">
+    <button type="submit" name="button">Add</button>
+  </form>
+
+  </body>
+</html>
