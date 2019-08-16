@@ -6,12 +6,15 @@
 </div>
 
 <div class="box">
-<%  for(var i=0; i<todoitems.length;i++){ %>
-  <div class="item">
-    <input type="checkbox">
-    <p><%= todoitems[i] %></p>
-  </div>
-  <% } %>
+<%  todoitems.forEach(function(todoitem){ %>
+<form  action="/delete" method="post">
+    <div class="item">
+      <input type="checkbox" name="checkbox" value="<%= todoitem._id%>" onChange="this.form.submit()">
+      <p><%= todoitem.name %></p>
+    </div>
+    <input type="hidden" name="hiddenListName" value="<%=listheading%>"></input>
+</form>
+  <% }); %>
 
   <form class="item" action="/" method="post">
     <input type="text" name="newitem" placeholder="New Item" autocomplete="off">
